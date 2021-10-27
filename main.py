@@ -1,11 +1,11 @@
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 from flask import Flask, request, render_template
 from urllib.error import URLError, HTTPError
 import os
 import predict_stockprice
 
 app = Flask(__name__)  # Flaskのインスタンスを作成
-run_with_ngrok(app)  # Google Colaboratoryを使う場合に実行
+#run_with_ngrok(app)  # Google Colaboratoryを使う場合に実行
 
 
 @app.route('/', methods=['GET', 'POST'])  # ルーティング
