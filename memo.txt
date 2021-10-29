@@ -1,0 +1,27 @@
+herokuへの　CLIデプロイ時に
+Compiled slug size: 1000 M is too large (max is 500M).
+
+デプロイのログ見たら、pytorch が800MB使ってた。
+https://qiita.com/kimisyo/items/e73844cf1ff46e2f26c5
+pytorchのcpu版に変更したら150mbまで圧縮できた。
+
+
+Flask+Python+Herokuで環境構築してから何かをデプロイするまで
+https://qiita.com/iBotamon/items/f40d7d233b8c9bf807ff
+
+
+Dockerイメージとコンテナの削除方法
+https://qiita.com/tifa2chan/items/e9aa408244687a63a0ae
+
+【WSL2】WSL2からDockerを使う【Docker】
+https://www.shidaru.com/20200531/
+
+
+
+
+進捗：
+これでlocalのdocker/flasktestv2で簡易なflaskサーバーを立てられたが、本番のwebアプリをdocker上では上手く動作せず。
+https://gray-code.com/blog/flask-on-docker/#section3
+
+
+venvの仮想環境＋localserverで開発してrequirements.txtに記述、HerokuCLIにデプロイした。
