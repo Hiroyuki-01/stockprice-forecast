@@ -19,6 +19,7 @@ scipy==1.7.1
 six==1.16.0
 sklearn==0.0
 threadpoolctl==3.0.0
-torch==1.10.0
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.9.1+cpu
 typing-extensions==3.10.0.2
 Werkzeug==2.0.2
