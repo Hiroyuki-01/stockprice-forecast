@@ -11,14 +11,14 @@ import torch.nn.functional as F
 def preprocessing(close):
     date = range(-49, 1)  # 現在(0日目)から過去50日(-49日目)の日数
     dataset = pd.DataFrame({"date": date, "close": close})
-    dataset['25MA'] = dataset['close'].rolling(window=25, min_periods=25).mean()  # 過去50日分のデータから25日移動平均を算出
+    dataset['25MA'] = dataset['close'].rolling(
+        window=25, min_periods=25).mean()  # 過去50日分のデータから25日移動平均を算出
     test_dataset = dataset[25:]  # 直近の過去25日分のデータを取得
 
     # 標準化に必要なパラメータ(平均値、標準偏差)を読み込み
-    with open(('static/train_files/scaler.pkl'), 'rb') as f:
+    with open(("./static/train_files/scaler.pkl"), 'rb') as f:
         scaler = pickle.load(f)
 
-    
     ma = test_dataset['25MA'].values.reshape(-1, 1)  # 二次元配列にreshape
     ma_std = scaler.fit_transform(ma)  # 標準化
     test_x = torch.Tensor(ma_std)  # ndarrayをPyTorchのTensorに変換
@@ -49,7 +49,7 @@ def define_nn():
     # # 保存した学習パラメータを読み込む
     net = Net(D_in, H, D_out).to(device)
     net.load_state_dict(torch.load(
-        "static/train_files/net.pth", map_location=device))
+        "./static/train_files/net.pth", map_location=device))
     return net, device
 
 
@@ -85,7 +85,7 @@ def plot_result(test_dataset, y_pred):
              marker='*', markersize=10)
     plt.legend()  # 凡例
     plt.xticks(rotation=30)  # x軸ラベルを30度回転して表示
-    plt.savefig("static/predict_files/stock_price_prediction.png")  # 図の保存
+    plt.savefig("./static/predict_files/stock_price_prediction.png")  # 図の保存
 
 
 def main(data):
