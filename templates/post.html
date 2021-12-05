@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoPP ~Stock Price Prediction AI~</title>
+    <title>株価予測　時系列</title>
+    <!--
     <style>
         h3 {
             color: #444444;
@@ -34,13 +35,16 @@
             margin-right: auto;
         }
     </style>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
     <div class="container-fluid">
-
+        <!--
         <header class="header">
             <div class="row">
                 <div class="col-lg-12">
@@ -48,19 +52,11 @@
                 </div>
             </div>
         </header>
-
+    -->
 
         <main class="main">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>
-                    <h3>予測結果</h3>
-                    明日の25日移動平均: <font size="5" color="green""><b>{{ y_pred }}</b></font><br>
-                    明日の移動平均 ー 今日の移動平均: <font size="5" color="green"><b>{{ sub_ma }}</b></font><br>
-                    </p>
-                </div>
-            </div>
 
+            <br><h3>予測結果</h3>
             <div class="row">
                 <div class="col-lg-12">
                     <img src="static/predict_files/stock_price_prediction.png?{{ datetime }}" class="img-fluid" /><br>
@@ -69,10 +65,19 @@
 
             <br>
             <p>
-                <a href="static/predict_files/stock_price_prediction.png" class="btn btn-success" role="button"
+                <a href="static/predict_files/stock_price_prediction.png" class="btn btn-success bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" role="button"
                     download><big>画像を保存</big></a>
-                <a href="{{ url_for('index') }}" class="btn btn-light" role="button"><big>戻る</big></a>
+                <a href="{{ url_for('index') }}" class="btn btn-light bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" role="button"><big>戻る</big></a>
             </p>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                    明日の25日移動平均: <font size="5" color="blue"><b>{{ y_pred }}</b></font><br>
+                    明日と今日の変動幅: <font size="5" color="blue"><b>{{ sub_ma }}</b></font><br>
+                    </p>
+                </div>
+            </div>
         </main>
     </div>
 

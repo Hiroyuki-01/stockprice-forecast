@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoPP ~Stock Price Prediction AI~</title>
+    <title>時系列データ株価予測</title>
+    <!--
     <style>
         h3 {
             color: #444444;
@@ -34,9 +35,15 @@
             margin-right: auto;
         }
     </style>
+-->
+<!--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+-->
+
+    <link rel="stylesheet" href="../static/style.css">
 </head>
+
 
 <body>
     <div class="container-fluid">
@@ -50,9 +57,9 @@
         </header>
         -->
         <p>
-            <b>株価予測 </b><br>
+            <b>時系列データから株価予測 </b><br>
             This app is based on kaggle's
-            <a href="https://www.kaggle.com/dgawlik/nyse">New York Stock Exchange data.</a><br>
+            <a href="https://www.kaggle.com/dgawlik/nyse" class ="text-blue-500">New York Stock Exchange data.</a><br>
 
 
         </p>
@@ -61,8 +68,12 @@
                 <div class="col-lg-12">
                     <br>
                     <p>
-                        AIによって株価の25日移動平均を予測します。<br>
+                        株価の25日移動平均を予測します。<br>
+                        機械学習モデル:LSTM<br>
+                        テストデータの平均絶対誤差：0.159ドル<br>
+
                     </p>
+                    <br>
                  </div>
             </div>
 
@@ -70,8 +81,20 @@
                 <div class="col-lg-12">
                     <form action="{{ url_for('index') }}" method="post">
                         <div class="form-group">
-                            <label for="data" class=""><b>過去50日分の終値を1行ずつ入力してください。</b></label>
-                            <textarea name="data" class="form-control" id="data" rows="50" cols="1">
+                            <label for="data" class=""><b>過去50日分の終値をtsv形式で入力してください。</b></label>
+                            <br>
+                            <!--
+                            <button type="submit" class="btn btn-primary">実行</button>
+                            -->
+                        <button type="submit" class="btn  btn-primary bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">実行</button>
+                        <!--
+                        <button type="reset" class="btn btn-light">クリア</button>
+
+                        <button type="reset" class="btn btn-light bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">クリア</button>
+                        -->
+                           <!-- <textarea name="data" class="form-control" id="data" rows="50" cols="1">-->
+
+                                <textarea name="data" id="data" class="form-textarea mt-1 block w-full border-dashed border-4 border-light-blue-500" rows="50"cols="1">
 125.840
 119.980
 114.950
@@ -122,14 +145,17 @@
 120.630
 120.700
 120.820</textarea>
+
                         </div>
-                        <button type="submit" class="btn btn-primary">実行</button>
-                        <button type="reset" class="btn btn-light">クリア</button>
+
+
+
+
                     </form>
                     <br>
                 </div>
             </div>
-
+            <!--
             <div class="row">
                 <div class="col-lg-12">
                     <p>
@@ -138,6 +164,7 @@
                     </p>
                 </div>
             </div>
+        -->
         </main>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -149,6 +176,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
     </div>
 </body>
 
