@@ -20,7 +20,8 @@ https://www.shidaru.com/20200531/
 https://www.tcom242242.net/entry/python-basic/scikitlearn/scikit-learn-minimaxscaler-save/
 
 離ステップ：
- cssの改修   bootstrap→tailwindcss
+ cssの改修   bootstrap → tailwindcss
+ 描画画像の変更
  yahoo以外のデータで予測:
     予測モデル
     正規化のパラメータを保存、読み込みが必要
