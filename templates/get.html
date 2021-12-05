@@ -47,15 +47,9 @@
 
 <body>
     <div class="container-fluid">
-        <!--
-        <header class="header">
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="{{ url_for('index') }}"><img src="/static/images/logo.png" class="img-fluid"></a>
-                </div>
-            </div>
-        </header>
-        -->
+
+
+
         <p>
             <b>時系列データから株価予測 </b><br>
             This app is based on kaggle's
@@ -68,11 +62,18 @@
                 <div class="col-lg-12">
                     <br>
                     <p>
-                        株価の25日移動平均を予測します。<br>
+                        米yahoo株価の25日移動平均を予測します。<br>
                         機械学習モデル:LSTM<br>
                         テストデータの平均絶対誤差：0.159ドル<br>
 
                     </p>
+                    <header class="header">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="{{ url_for('index') }}"><img src="/static/images/The_LSTM_cell.png" class="img-fluid"></a>
+                            </div>
+                        </div>
+                    </header>
                     <br>
                  </div>
             </div>
@@ -81,7 +82,7 @@
                 <div class="col-lg-12">
                     <form action="{{ url_for('index') }}" method="post">
                         <div class="form-group">
-                            <label for="data" class=""><b>過去50日分の終値をtsv形式で入力してください。</b></label>
+                            <label for="data" class=""><b>米yahooの過去50日分の終値をtsv形式で入力してください。</b></label>
                             <br>
                             <!--
                             <button type="submit" class="btn btn-primary">実行</button>
