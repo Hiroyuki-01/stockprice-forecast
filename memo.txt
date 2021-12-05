@@ -16,6 +16,17 @@ https://qiita.com/tifa2chan/items/e9aa408244687a63a0ae
 【WSL2】WSL2からDockerを使う【Docker】
 https://www.shidaru.com/20200531/
 
+【Scikit-learn】MinMaxScaler、StandardScaler等を保存する
+https://www.tcom242242.net/entry/python-basic/scikitlearn/scikit-learn-minimaxscaler-save/
+
+離ステップ：
+ cssの改修   bootstrap→tailwindcss
+ yahoo以外のデータで予測:
+    予測モデル
+    正規化のパラメータを保存、読み込みが必要
+ 他の機械学習モデルを使う
+    RNN, GRU, 層を深くしたLSTM
+ 予測に他のデータを加える
 
 
 

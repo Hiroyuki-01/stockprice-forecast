@@ -2,3 +2,6 @@ flask/
 app/
 ./Dockerfile
 ./run.sh
+node_modules
+./memo.txt
+
